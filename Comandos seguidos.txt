@@ -1,0 +1,32 @@
+git init
+git add *
+git commit -m "primer cambio"
+git add *
+git commit -m "Segundo Cambio"
+git add *
+git commit -m "Tercer Cambio"
+
+git log --oneline
+git tag -a "v1" -m "version 1" 861f08e
+git tag -a "v2" -m "version 2" 861f08e
+
+git push origin master
+git push --tag
+
+git checkout -b license 861f08
+git checkout -b author 861f08
+
+git add *
+git commit -m "archivo author"
+git push origin author
+
+git checkout license
+git add *
+git commit -m "archivo licencia"
+git push origin license
+
+git checkout master
+git merge license
+git merge author
+git branch -d license
+git branch -d author
